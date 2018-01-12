@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/search"
+        android:icon="@mipmap/book_detail_info_search_img"
+        android:title="search"
+        app:showAsAction="always"/>
+    <item android:id="@+id/features"
+        android:icon="@mipmap/ic_moreoverflow_mtrl_alpha"
+        android:title="search"
+        app:showAsAction="always"/>
+</menu>

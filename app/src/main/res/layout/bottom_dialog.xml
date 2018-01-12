@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:paddingBottom="20dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="20dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/schedule_linearLayout">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/schedule"
+            android:textSize="18sp"
+            android:gravity="center"
+            />
+        <SeekBar
+            android:id="@+id/id_seekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/brightness_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/schedule_linearLayout">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:text="亮度"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"/>
+        <SeekBar
+            android:id="@+id/brightness_seekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:layout_gravity="center_vertical"
+            />
+        <Button
+            android:id="@+id/systemBrightness"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="系统"/>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_below="@+id/brightness_linearLayout"
+        android:id="@+id/textSize_relativeLayout">
+        
+        <Button
+            android:id="@+id/textSizeDecrease"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="A-"/>
+
+        <TextView
+            android:id="@+id/textSizeShow"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:text="17"
+            android:textSize="18sp"
+            android:layout_toRightOf="@id/textSizeDecrease"
+            android:gravity="center"
+            />
+
+        <Button
+            android:id="@+id/textSizeIncrease"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_toRightOf="@id/textSizeShow"
+            android:text="A+"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_toRightOf="@id/textSize_relativeLayout"
+        android:layout_alignTop="@+id/textSize_relativeLayout">
+
+        <Button
+            android:id="@+id/changeColorButton1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/changecolorbutton1"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            />
+        <Button
+            android:id="@+id/changeColorButton2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/changecolorbutton2"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/changeColorButton1"
+            android:layout_marginLeft="5dp"
+            />
+        <Button
+            android:id="@+id/changeColorButton3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/changecolorbutton3"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/changeColorButton2"
+            android:layout_marginLeft="5dp"
+            />
+        <Button
+            android:id="@+id/changeColorButton4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/changecolorbutton4"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/changeColorButton3"
+            android:layout_marginLeft="5dp"
+            />
+        <Button
+            android:id="@+id/changeColorButton5"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/changecolorbutton5"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/changeColorButton4"
+            android:layout_marginLeft="5dp"
+            />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

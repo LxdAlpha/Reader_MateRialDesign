@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/account"
+        android:orderInCategory="0"
+        android:title="账户"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/openLocalBook"
+        android:orderInCategory="1"
+        android:title="打开本地图书"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/transportBookByWifi"
+        android:orderInCategory="2"
+        android:title="wifi传书"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/setting"
+        android:orderInCategory="3"
+        android:title="设置"
+        app:showAsAction="never"/>
+
+</menu>

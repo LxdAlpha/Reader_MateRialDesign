@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+
+    <TextView
+        android:id="@+id/main_community_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textSize="18sp"
+        android:textColor="#3377AA"
+        android:text="测试标题"/>
+    <TextView
+        android:id="@+id/main_coomunity_item_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="新的艺术，从根本上说，是它带给人们新的“看”的方式。 《女孩们》就是这样一种新的艺术，它让我们以新的方式看“女孩”。 它的故事很简单：14岁的少女伊薇，被一群放荡不羁的嬉皮士女孩（尤其是其中的黑发女孩——苏珊）吸引，跟着她们来到农场公社，公社是曼森家族式的，领..."/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="10dp">
+        <TextView
+            android:id="@+id/main_community_item_writer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#3377AA"
+            android:text="测试作者"/>
+        <TextView
+            android:id="@+id/main_community_item_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:textColor="#999999"
+            android:text="测试时间"/>
+    </LinearLayout>
+
+
+</LinearLayout>

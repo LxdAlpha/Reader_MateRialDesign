@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Reader_MateRialDesign</string>
+    <string name="main_name">东阅</string>
+    <string name="book_test">顺利到达</string>
+    <string name="button_ceshi">测试</string>
+    <string name="paizhao">拍照</string>
+    <string name="congxiangcebuoqu">从相册中选取</string>
+    <string name="quxiao">取消</string>
+    <string name="previousChapter">上一章</string>
+    <string name="nextChapter">下一章</string>
+    <string name="schedule">进度</string>
+</resources>
