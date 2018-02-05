@@ -30,7 +30,11 @@
         <activity
             android:name=".BookReadActivity"
             android:launchMode="standard" />
-        <activity android:name=".CommunityActivity"></activity>
+        <activity android:name=".CommunityActivity" />
+        <activity
+            android:name=".FindBookActivity"
+            android:label="新书速递"></activity>
+        <activity android:name=".FindBookDetailActivity"></activity>
     </application>
 
 </manifest>

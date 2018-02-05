@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.alpha.reader_materialdesign.Adapter.MainCommunityAdapter;
+import com.example.alpha.reader_materialdesign.Adapter.MainFindAdapter;
 import com.example.alpha.reader_materialdesign.Adapter.MainShelfAdapter;
 import com.example.alpha.reader_materialdesign.Domain.Book;
 import com.example.alpha.reader_materialdesign.Domain.MainCommunity;
@@ -36,6 +37,7 @@ public class PageFragment extends Fragment{
     View view;
     ArrayList<Book> list = new ArrayList<>();
     ArrayList<MainCommunity> mainCommunityList = new ArrayList<>();
+    ArrayList<String> findList = new ArrayList<>();
     public static PageFragment newInstance(int page){
         Bundle args = new Bundle();
         args.putInt(ARGS_PAGE, page);
@@ -81,6 +83,16 @@ public class PageFragment extends Fragment{
                     swipeRefreshLayout.setRefreshing(false);
                 }
             });
+        }else if(mPage == 3){
+            view = inflater.inflate(R.layout.activity_main_shelf, container, false);
+            initFind();
+            RecyclerView recyclerView = view.findViewById(R.id.main_shelf_view);
+            LinearLayoutManager layoutManager = new LinearLayoutManager(this.getActivity());
+            recyclerView.setLayoutManager(layoutManager);
+            DividerItemDecoration mDivider = new DividerItemDecoration(this.getActivity(), DividerItemDecoration.VERTICAL);
+            recyclerView.addItemDecoration(mDivider);
+            MainFindAdapter adapter = new MainFindAdapter(findList);
+            recyclerView.setAdapter(adapter);
         }
         return view;
     }
@@ -141,5 +153,13 @@ public class PageFragment extends Fragment{
         recyclerView.addItemDecoration(mDivider);
         MainCommunityAdapter adapter = new MainCommunityAdapter(mainCommunityList);
         recyclerView.setAdapter(adapter);
+    }
+
+    private void initFind(){
+        findList.clear();
+        String[] items = {"新书速递", "最受关注图书排行榜", "Top250排行榜"};
+        for(int i = 0; i < items.length; i++){
+            findList.add(items[i]);
+        }
     }
 }

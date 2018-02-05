@@ -48,7 +48,7 @@ public class BookReadDrawerChapterDataAdapter extends RecyclerView.Adapter<BookR
             public void onClick(View view) {
                 int position = holder.getAdapterPosition();
                 double percentage = chapterPercentages.get(position);
-                Log.d("lxd", chapterNames.get(position));
+                //Log.d("lxd", chapterNames.get(position));
                 recycleViewItemClickListener.onItemClick(percentage);
             }
         });
