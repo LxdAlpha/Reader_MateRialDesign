@@ -16,9 +16,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 dependencies {
+    compile 'com.google.code.gson:gson:2.8.2'
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    compile 'com.koushikdutta.async:androidasync:2.+'
+    compile 'com.hwangjr.rxbus:rxbus:1.0.6'
     compile 'de.hdodenhof:circleimageview:2.2.0'
     compile 'com.zzhoujay.richtext:richtext:3.0.5'
     compile 'com.hyman:flowlayout-lib:1.1.2'

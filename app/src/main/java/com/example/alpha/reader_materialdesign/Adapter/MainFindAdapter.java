@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.alpha.reader_materialdesign.FindBookActivity;
+import com.example.alpha.reader_materialdesign.FindBookActivityB;
+import com.example.alpha.reader_materialdesign.FindBookActivityC;
 import com.example.alpha.reader_materialdesign.R;
 
 import java.util.ArrayList;
@@ -31,9 +33,19 @@ public class MainFindAdapter extends RecyclerView.Adapter<MainFindAdapter.ViewHo
             @Override
             public void onClick(View view) {
                 int position = holder.getAdapterPosition();
-                Intent intent = new Intent(parent.getContext(), FindBookActivity.class);
-                intent.putExtra("kind", position + 1);
-                parent.getContext().startActivity(intent);
+                if(position == 1){
+                    Intent intent = new Intent(parent.getContext(), FindBookActivityB.class);
+                    intent.putExtra("kind", position + 1);
+                    parent.getContext().startActivity(intent);
+                }else if(position == 0){
+                    Intent intent = new Intent(parent.getContext(), FindBookActivity.class);
+                    intent.putExtra("kind", position + 1);
+                    parent.getContext().startActivity(intent);
+                }else if (position == 2){
+                    Intent intent = new Intent(parent.getContext(), FindBookActivityC.class);
+                    intent.putExtra("kind", position + 1);
+                    parent.getContext().startActivity(intent);
+                }
             }
         });
         return holder;

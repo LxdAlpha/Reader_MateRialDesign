@@ -1,36 +1,30 @@
 package com.example.alpha.reader_materialdesign;
 
-import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.example.alpha.reader_materialdesign.Adapter.FindNewBookRecommendAdapter;
 import com.example.alpha.reader_materialdesign.Domain.FindBookItem;
 import com.example.alpha.reader_materialdesign.Utils.RecommendUtil;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-public class FindBookActivity extends AppCompatActivity {
+public class FindBookActivityC extends AppCompatActivity {
 
     private ArrayList<FindBookItem> list;
     RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("lxd", "onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_book);
         Toolbar toolbar = findViewById(R.id.bookRecommendToolbar);

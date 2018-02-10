@@ -1,6 +1,9 @@
 package com.example.alpha.reader_materialdesign;
 
+import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -9,15 +12,23 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import com.example.alpha.reader_materialdesign.Adapter.MainFragmentPagerAdapter;
+import com.example.alpha.reader_materialdesign.Wifi.Constants;
+import com.example.alpha.reader_materialdesign.Wifi.PopupMenuDialog;
+import com.example.alpha.reader_materialdesign.Wifi.WebService;
+import com.hwangjr.rxbus.annotation.Subscribe;
+import com.hwangjr.rxbus.annotation.Tag;
 
 import org.litepal.tablemanager.Connector;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
 
-
+        context = this;
     }
 
 
@@ -85,7 +96,16 @@ public class MainActivity extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case R.id.account:
-                        Toast.makeText(MainActivity.this, "66", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(MainActivity.this, "66", Toast.LENGTH_SHORT).show();
+                        SharedPreferences pref = getSharedPreferences("loginData", MODE_PRIVATE);
+                        String name = pref.getString("login", "");
+                        if(name.equals("false") || name.equals("")){
+                            Intent acccountIntent = new Intent(MainActivity.this, AccountActivity.class);
+                            startActivity(acccountIntent);
+                        }else if(name.equals("true")){
+                            Intent hadLoginIntent = new Intent(MainActivity.this, HadLoginActivity.class);
+                            startActivity(hadLoginIntent);
+                        }
                         return true;
                     case R.id.openLocalBook:
                         Intent intent = new Intent(MainActivity.this, FileOpenActivity.class);
@@ -93,6 +113,8 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case R.id.transportBookByWifi:
                         Toast.makeText(MainActivity.this, "88", Toast.LENGTH_SHORT).show();
+                        WebService.start(context);
+                        new PopupMenuDialog(context).builder().setCancelable(false).setCanceledOnTouchOutside(false).show();
                         return true;
                     case R.id.setting:
                         Toast.makeText(MainActivity.this, "99", Toast.LENGTH_SHORT).show();
@@ -105,4 +127,11 @@ public class MainActivity extends AppCompatActivity {
         popupMenu.show();
     }
 
+
+    @Subscribe(tags = {@Tag(Constants.RxBusEventType.POPUP_MENU_DIALOG_SHOW_DISMISS)})
+    public void onPopupMenuDialogDismiss(Integer type) {
+        if (type == Constants.MSG_DIALOG_DISMISS) {
+            WebService.stop(this);
+        }
+    }
 }
